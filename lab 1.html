@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+
+/* Базовый контейнер табов */
+.tabs {
+        min-width: 320px;
+        max-width: 800px;
+        padding: 0px;
+        margin: 0 auto;
+}
+/* Стили секций с содержанием */
+.tabs>section {
+        display: none;
+        padding: 15px;
+        background: #fff;
+ border: 1px solid #ddd;
+}
+.tabs>section>p {
+        margin: 0 0 5px;
+        line-height: 1.5;
+        color: #383838;
+ /* прикрутим анимацию */
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+}
+/* Описываем анимацию свойства opacity */
+ 
+@-webkit-keyframes fadeIn {
+        from {
+                opacity: 0;
+        }
+        to {
+                opacity: 1;
+        }
+}
+@keyframes fadeIn {
+        from {
+                opacity: 0;
+        }
+        to {
+                opacity: 1;
+        }
+}
+/* Прячем чекбоксы */
+.tabs>input {
+        display: none;
+        position: absolute;
+}
+/* Стили переключателей вкладок (табов) */
+.tabs>label {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #aaa;
+ border: 0px solid #ddd;
+ border-width: 1px 1px 1px 1px;
+        background: #f1f1f1;
+ border-radius: 3px 3px 0 0;
+}
+/* Шрифт-иконки от Font Awesome в формате Unicode */
+.tabs>label:before {
+        font-family: fontawesome;
+        font-weight: normal;
+        margin-right: 10px;
+}
+.tabs>label[for*="1"]:before {
+        content: "\f19a";
+}
+.tabs>label[for*="2"]:before {
+        content: "\f17a";
+}
+.tabs>label[for*="3"]:before {
+        content: "\f13b";
+}
+.tabs>label[for*="4"]:before {
+        content: "\f13c";
+}
+/* Изменения стиля переключателей вкладок при наведении */
+ 
+.tabs>label:hover {
+        color: #888;
+ cursor: pointer;
+}
+/* Стили для активной вкладки */
+.tabs>input:checked+label {
+        color: #555;
+ border-top: 1px solid #009933;
+ border-bottom: 1px solid #fff;
+ background: #fff;
+}
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4 {
+ display: block;
+}
+/* Убираем текст с переключателей 
+* и оставляем иконки на малых экранах
+*/
+ 
+@media screen and (max-width: 680px) {
+        .tabs>label {
+                font-size: 0;
+        }
+        .tabs>label:before {
+                margin: 0;
+                font-size: 18px;
+        }
+}
+/* Изменяем внутренние отступы 
+*  переключателей для малых экранов
+*/
+@media screen and (max-width: 400px) {
+        .tabs>label {
+                padding: 15px;
+        }
+}
+
+.layer1 {
+    float: left; /* Обтекание по правому краю */
+    background: #fd0; 
+    border: 1px solid black; 
+    padding: 10px; 
+    margin-right: 20px; 
+    width: 40%; 
+   }
+
+h2 {
+
+   background-color:red;
+
+   width: 150px;
+
+   height: 55px;
+
+   position: absolute; 
+
+   top: -10px;  
+
+   left: 500px; 
+
+   bottom: 20px; 
+
+   right: 40px;
+
+}
+
+ h3 {
+
+            width: 150px;
+
+            height: 30px;
+
+            position: relative;
+
+        }
+
+#text {
+	color: green;
+}
+
+.content {
+	color: blue;
+}
+
+        p {color:#808080;}
+    </style>
+<body>
+	<p><a name="top"></a></p>
+  <h1>Лабораторная работа №2</h1>
+  <h2>Погореленко Владимир</h2>
+  <h3>КИУКИ-18-5</h3>
+  <h4 class="layer1"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy nibh 
+   euismod tincidunt ut lacreet dolore magna aliguam erat volutpat. </h4>
+	<p><a name="beauty"></a></p>
+    <p id="text" class ="content"><b>Оформление текста</b></p>
+	
+    <p>Для любого натурального числа</br><b>n>2</b> уравнение <i>a</i><sup>n</sup>+<i>b</i><sup>n</sup> = <i>c</i><sup>n</sup>  <b>не имеет </br>решений</b> при целых ненулевых</br>числах a, b, c.</p>
+
+
+<p><a name="list"></a></p>
+<p><b>Список</b></p>
+    <ul>
+        <li>1 Факультет компьютерных наук
+          <ul>
+            <li>1.1 Кафедра информационных управляющих систем (ИУС)</li>
+			<li>1.2 Кафедра искусственного интеллекта (ИИ) </li>
+			<li>1.3 Кафедра системотехники (СТ)</li>
+			<li>1.4 Кафедра программной инженерии (ПИ) </li>
+			<li>1.5 Кафедра медиасистем и технологий (МСТ) </li>
+			
+          </ul>
+        </li>
+        <li>2 Факультет компьютерной инженерии и управления
+            <ul>
+              <li>2.1 Кафедра электронных вычислительных машин (ЭВМ)</li>
+			  <li>2.2 Кафедра автоматизации проектирования вычислительной техники (АПВТ)</li>
+			  <li>2.3 Кафедра безопасности информационных технологий (БИТ)</li>
+			  <li>2.4 Кафедра философии</li>
+			  
+            </ul>
+          </li>
+		<li>3 Факультет автоматики и комьютерезированных технологий
+            <ul>
+              <li>3.1 Кафедра компьютерно-интегрированных технологий, автоматизации и мехатроники (Китами)</li>
+			  <li>3.2 Кафедра проектирования и эксплуатации электронных аппаратов (ПЭЭА)</li>
+			  <li>3.3 Кафедра физики</li>
+			  <li>3.4 Кафедра охраны труда (ОТ)</li>
+			  
+            </ul>
+          </li>
+		<li>4 Факультет иформационно-аналитических технологий и менеджмента
+            <ul>
+              <li>4.1 Кафедра информатики (ИФН)</li>
+			  <li>4.2 Кафедра прикладной математики (ПМ)</li>
+			  <li>4.3 Кафедра высшей математики (ВМ)</li>
+			  <li>4.4 Кафедра экономической кибернетики и управления экономической безопасностью (ЭК)</li>
+			  <li>4.5 Кафедра социальной информатики (СИ)</li>
+			  
+            </ul>
+          </li>
+      </ul>
+
+      <p><a name="table"></a></p>
+	  <p><b>Таблица</b><p>
+      <table>
+        <th>Валюта</th>
+        <th>Покупка</th>
+        <th>Продажа</th>
+        <th>НБУ</th>
+   </tr>
+   <tr><td>USD</td><td>27.8502</td><td>28.0817</td><td>27.9003</td></tr>
+   <tr><td>EUR</td><td>32.7909</td><td>33.2613</td><td>33.0674</td></tr>
+   <tr><td>RUB</td><td>0.3381</td><td>0.3837</td><td>0.3720</td></tr>
+   <tr><td>PLN</td><td>6.9729</td><td>7.5267</td><td>7.4329</td></tr>
+    </table>
+	
+	<p><a name="quest"></a></p>
+	<p style="color:red"><b>Опрос</b></p>
+	 <form action="handler.php">
+  <p><b>Сколько, по-вашему мнению, будет &quot;2+2&quot;?</b></p>
+  <p><input type="radio" name="answer" value="a1">5<Br>
+  <input type="radio" name="answer" value="a2">4<Br>
+  <input type="radio" name="answer" value="a3">3</p>
+  <p><input type="submit"></p>
+ </form>
+
+    
+    <p><a name="link"></a></p>
+	<p><b>Ссылки<b></p>
+	<p><a href="#top">Наверх</a></p>
+	<p><a href="#beauty">Оформление</a></p>
+	<p><a href="#list">Список</a></p>
+	<p><a href="#table">Таблица</a></p>
+	<p><a href="#quest">Опрос</a></p>
+	<p><a href="#link">Ссылки</a></p>
+	
+	<div class="tabs">
+    <input id="tab1" type="radio" name="tabs" checked>
+    <label for="tab1" title="Вкладка 1">Вкладка 1</label>
+ 
+    <input id="tab2" type="radio" name="tabs">
+    <label for="tab2" title="Вкладка 2">Вкладка 2</label>
+ 
+    <input id="tab3" type="radio" name="tabs">
+    <label for="tab3" title="Вкладка 3">Вкладка 3</label>
+ 
+    <input id="tab4" type="radio" name="tabs">
+    <label for="tab4" title="Вкладка 4">Вкладка 4</label>
+ 
+    <section id="content-tab1">
+        <p>
+                Вы открыли вкладку номер 1
+        </p>
+    </section>  
+    <section id="content-tab2">
+        <p>
+          Вы открыли вкладку номер 2
+        </p>
+    </section> 
+    <section id="content-tab3">
+        <p>
+          Вы открыли вкладку номер 3
+                </p>
+    </section> 
+    <section id="content-tab4">
+        <p>
+          Вы открыли вкладку номер 4
+        </p>
+    </section>    
+</div>
+    
+
+</body>
+</html>
